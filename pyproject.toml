@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meok-libp2p-agent-mesh-mcp"
+version = "1.0.0"
+description = "MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Nicholas Templeman", email = "nicholas@meok.ai" }]
+keywords = ["mcp", "libp2p", "p2p", "agent-mesh", "peer-discovery", "gossipsub", "meok"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Networking",
+]
+dependencies = ["mcp[cli]>=1.3.0", "cryptography>=42.0"]
+
+[project.urls]
+Homepage = "https://meok.ai/a2a"
+Repository = "https://github.com/CSOAI-ORG/meok-libp2p-agent-mesh-mcp"
+
+[project.scripts]
+meok-libp2p-agent-mesh-mcp = "server:main"
+
+[tool.setuptools]
+py-modules = ["server"]
