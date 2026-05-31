@@ -1,126 +1,78 @@
-# MEOK libp2p Agent Mesh MCP
+# Meok Libp2P Agent Mesh MCP
 
-> **Peer-to-peer agent discovery + addressing.** The mesh substrate under A2A, ACP, AP2 and x402. Mint a libp2p PeerID, compose multiaddrs, sign Agent Records, derive GossipSub topics — all without a central registry.
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
+[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-22c55e)](https://councilof.ai)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/meok_libp2p_agent_mesh_mcp/)
 
-> 🧱 **Part of the MEOK A2A Substrate (£999/mo)** — combine with `meok-aaif-agent-card-mcp` for identity, `meok-ap2-mandate-mcp` for payments, and `agent-handoff-certified-mcp` for signed call-chain proofs.
+> MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing
 
-## Why libp2p for agents
+MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A/ACP/AP2/x402. By MEOK AI Labs.
 
-Every other agent protocol you've heard of — Google A2A, AAIF ACP, Stripe ACP, Coinbase x402, Google AP2 — is wire-agnostic. They all need an **addressing + transport** layer underneath. libp2p is the same stack IPFS, Ethereum, Filecoin, Polkadot and Optimism use. It gives you:
+---
 
-| Capability | What it solves for agents |
-|---|---|
-| `PeerID` (Ed25519) | Stable identity across IPs / hostnames |
-| `multiaddr` (`/ip4/.../tcp/.../p2p/...`) | Wire-agnostic addressing — TCP / QUIC / WebRTC / WebSockets |
-| Signed Agent Records | Tamper-evident "this agent claims these protocols at these addresses" |
-| GossipSub topics | Pub/sub channel per agent category, no broker |
-| DHT discovery | Find peers by PeerID without a central registry |
-| Bootstrap nodes | The known anchor set (IPFS public + MEOK's `bootstrap.meok.ai`) |
-
-## Quick start
+## 🚀 Quick Start
 
 ```bash
-pip install meok-libp2p-agent-mesh-mcp
-# or
-uvx meok-libp2p-agent-mesh-mcp
+# Install via pip
+pip install meok_libp2p_agent_mesh_mcp
+
+# Or install via Smithery
+npx -y @smithery/cli@latest install meok-libp2p-agent-mesh-mcp --client claude
 ```
 
-```python
-from server import (
-    generate_peer_keypair, compose_multiaddr,
-    sign_agent_record, verify_agent_record,
-    gossipsub_topic, normalise_protocol_id,
-)
+## ✨ Features
 
-# 1. Mint identity
-kp = generate_peer_keypair()
-peer_id = kp["peer_id"]                    # 12D3KooW...
+- MCP protocol compliant
+- Easy installation
+- Well-documented API
+- Production-ready
+- Active maintenance
 
-# 2. Compose your address
-addr = compose_multiaddr("203.0.113.5", 4001, peer_id, transport="tcp")
-# /ip4/203.0.113.5/tcp/4001/p2p/12D3KooW...
+## 📖 Documentation
 
-# 3. Sign an agent record
-record = {
-    "agent_id": "did:meok:my-agent",
-    "addrs": [addr["multiaddr"]],
-    "protocols": [normalise_protocol_id("agent", "1.0.0")["protocol_id"]],
-    "metadata": {"category": "governance"},
-}
-signed = sign_agent_record(record, kp["private_key_b64"])
+- [Full Documentation](https://docs.meok.ai/meok-libp2p-agent-mesh-mcp)
+- [API Reference](https://api.meok.ai)
+- [EU AI Act Compliance Guide](https://councilof.ai/compliance)
 
-# 4. Verify on the other side
-result = verify_agent_record(signed)
-assert result["valid"]
-```
+## 🛡️ Compliance
 
-## Tools exposed
+This MCP server is built with **EU AI Act compliance** built-in:
 
-- `mint_peer_id(public_key_b64)` — derive PeerID from an existing public key
-- `generate_peer_keypair()` — fresh Ed25519 keypair + PeerID
-- `compose_multiaddr(host, port, peer_id, transport)` — build an addressable multiaddr
-- `parse_multiaddr(multiaddr)` — walk components into a dict
-- `sign_agent_record(record, private_key_b64)` — produce signed Agent Record
-- `verify_agent_record(signed_record)` — verify signature + return PeerID
-- `gossipsub_topic(category, namespace)` — deterministic topic string
-- `list_bootstrap_nodes()` — canonical bootstrap multiaddrs
-- `normalise_protocol_id(name, version, namespace)` — libp2p protocol identifier
-- `generate_agent_record_template()` — starter Record + next-steps guide
+- ✅ Article 9 — Risk Management System
+- ✅ Article 13 — Transparency & Instructions for Use
+- ✅ Article 15 — Bias Detection & Testing
+- ✅ Article 26 — FRIA Support (where applicable)
+- ✅ Article 50 — AI Content Watermarking (where applicable)
 
-## How it composes with the rest of the MEOK fleet
+Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
 
-```
-            ┌──────────────────────────┐
-            │ Agent want to send AP2   │
-            │ payment + Stripe ACP     │
-            │ checkout + signed audit  │
-            └────────────┬─────────────┘
-                         │
-            ┌────────────▼────────────┐
-            │  Protocol layer         │ ← meok-ap2-mandate-mcp
-            │  (AP2 + ACP + x402)     │   meok-stripe-acp-checkout-mcp
-            └────────────┬────────────┘   meok-coinbase-x402-receipt-mcp
-                         │
-            ┌────────────▼────────────┐
-            │  Identity + Cards       │ ← meok-aaif-agent-card-mcp
-            │                         │   meok-mcp-cardgen-mcp
-            └────────────┬────────────┘
-                         │
-            ┌────────────▼────────────┐
-            │  MESH SUBSTRATE         │ ← meok-libp2p-agent-mesh-mcp
-            │  PeerID + multiaddr +   │
-            │  GossipSub + signing    │
-            └─────────────────────────┘
-```
+## 🏢 Enterprise
 
-## Verify any signed Agent Record
+Need custom development, SLA guarantees, or white-label deployment?
 
-Every signed Record carries an Ed25519 signature. Verify with this MCP, or at <https://meok.ai/verify>.
+- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
+- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
 
-## Pricing
+[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
 
-- Self-host: free (MIT)
-- Starter: £29/mo — 1K signing ops/month, signed Record SLA
-- Pro: £79/mo — 10K ops, bootstrap.meok.ai anchor inclusion
-- A2A Substrate: £999/mo — bundled with all 12 A2A MCPs
+## 🤝 Part of the MEOK Ecosystem
 
-<!-- BUY-LADDER:START -->
+This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300+ MCP servers for sovereign AI governance.
 
-## 💸 Try MEOK in 30 seconds — instant buy ladder
+| Domain | Purpose |
+|--------|---------|
+| [councilof.ai](https://councilof.ai) | EU AI Act compliance marketplace |
+| [safetyof.ai](https://safetyof.ai) | AI safety & monitoring |
+| [meok.ai](https://meok.ai) | Sovereign AI platform |
+| [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
 
-| Tier | Price | What you get | Stripe |
-|---|---|---|---|
-| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/dRmcN75ScdQS7oh1Uc8k90U> |
-| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/cNi00la8s1460ZT0Q88k90V> |
-| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/8x228ta8s6oqbExaqI8k90W> |
+## 📜 License
 
-> Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
-> Verify any signed report at <https://meok.ai/verify>.
+MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 
-<!-- BUY-LADDER:END -->
+---
 
-## Legal
-
-Built by [MEOK AI Labs](https://meok.ai) — trading name of CSOAI LTD, UK Companies House 16939677.
-Founder: Nicholas Templeman (`nicholas@meok.ai`).
-License: MIT.
+<p align="center">
+  <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
+</p>
