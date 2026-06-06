@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+Buy Pro: https://www.csoai.org/checkout
+
 MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing
 ======================================================================
 
