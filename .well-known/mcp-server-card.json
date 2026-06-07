@@ -1,0 +1,43 @@
+{
+  "name": "meok-libp2p-agent-mesh-mcp",
+  "title": "Meok Libp2P Agent Mesh Mcp",
+  "description": "MEOK libp2p Agent Mesh MCP \u2014 peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "mint_peer_id"
+    },
+    {
+      "name": "generate_peer_keypair"
+    },
+    {
+      "name": "compose_multiaddr"
+    },
+    {
+      "name": "parse_multiaddr"
+    },
+    {
+      "name": "sign_agent_record"
+    },
+    {
+      "name": "verify_agent_record"
+    },
+    {
+      "name": "gossipsub_topic"
+    },
+    {
+      "name": "list_bootstrap_nodes"
+    },
+    {
+      "name": "normalise_protocol_id"
+    },
+    {
+      "name": "generate_agent_record_template"
+    }
+  ]
+}

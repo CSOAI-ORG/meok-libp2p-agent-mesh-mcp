@@ -1,0 +1,26 @@
+# meok-libp2p-agent-mesh-mcp
+
+> MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs.
+
+MCP server by MEOK AI Labs. Framework: fastmcp. Transport: stdio.
+
+## Tools
+- mint_peer_id
+- generate_peer_keypair
+- compose_multiaddr
+- parse_multiaddr
+- sign_agent_record
+- verify_agent_record
+- gossipsub_topic
+- list_bootstrap_nodes
+- normalise_protocol_id
+- generate_agent_record_template
+
+## Install
+```
+pip install meok-libp2p-agent-mesh-mcp
+```
+
+## Links
+- PyPI: https://pypi.org/project/meok-libp2p-agent-mesh-mcp/
+- Docs: https://meok.ai

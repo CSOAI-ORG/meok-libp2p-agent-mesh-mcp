@@ -84,3 +84,27 @@ MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
 Built by [MEOK AI Labs](https://meok.ai) — trading name of CSOAI LTD, UK Companies House 16939677.
 Founder: Nicholas Templeman (`nicholas@meok.ai`).
 License: MIT.
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "meok-libp2p-agent-mesh-mcp": {
+      "command": "uvx",
+      "args": ["meok-libp2p-agent-mesh-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install meok-libp2p-agent-mesh-mcp` then run the `meok-libp2p-agent-mesh-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `mint_peer_id` to …"
+- "Use `generate_peer_keypair` to …"
+- "Use `compose_multiaddr` to …"
