@@ -1,0 +1,38 @@
+name: meok-libp2p-agent-mesh-mcp
+description: 'MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed'
+version: 1.0.0
+author: MEOK AI Labs
+homepage: https://proofof.ai
+repository: https://github.com/CSOAI-ORG/meok-libp2p-agent-mesh-mcp
+license: MIT
+categories:
+- compliance
+- governance
+tools:
+- name: mint_peer_id
+  description: mint peer id
+- name: generate_peer_keypair
+  description: generate peer keypair
+- name: compose_multiaddr
+  description: compose multiaddr
+- name: parse_multiaddr
+  description: parse multiaddr
+- name: sign_agent_record
+  description: sign agent record
+- name: verify_agent_record
+  description: verify agent record
+- name: gossipsub_topic
+  description: gossipsub topic
+- name: list_bootstrap_nodes
+  description: list bootstrap nodes
+- name: normalise_protocol_id
+  description: normalise protocol id
+- name: generate_agent_record_template
+  description: generate agent record template
+build:
+  type: python
+  entrypoint: server.py
+  dependencies:
+  - mcp>=1.0.0
+runtime:
+  python: '>=3.10'
