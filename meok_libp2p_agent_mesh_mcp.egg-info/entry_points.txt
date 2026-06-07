@@ -1,0 +1,2 @@
+[console_scripts]
+meok-libp2p-agent-mesh-mcp = server:main
