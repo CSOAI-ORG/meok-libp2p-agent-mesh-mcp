@@ -1,0 +1,113 @@
+{
+  "name": "meok-libp2p-agent-mesh-mcp",
+  "description": "MEOK libp2p Agent Mesh MCP \u2014 peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed",
+  "url": "https://proofof.ai/scorecard/meok-libp2p-agent-mesh-mcp.html",
+  "version": "1.0.0",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "mint_peer_id",
+      "name": "Mint Peer Id",
+      "description": "mint_peer_id via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_peer_keypair",
+      "name": "Generate Peer Keypair",
+      "description": "generate_peer_keypair via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "compose_multiaddr",
+      "name": "Compose Multiaddr",
+      "description": "compose_multiaddr via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "parse_multiaddr",
+      "name": "Parse Multiaddr",
+      "description": "parse_multiaddr via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "sign_agent_record",
+      "name": "Sign Agent Record",
+      "description": "sign_agent_record via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "verify_agent_record",
+      "name": "Verify Agent Record",
+      "description": "verify_agent_record via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "gossipsub_topic",
+      "name": "Gossipsub Topic",
+      "description": "gossipsub_topic via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "list_bootstrap_nodes",
+      "name": "List Bootstrap Nodes",
+      "description": "list_bootstrap_nodes via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "normalise_protocol_id",
+      "name": "Normalise Protocol Id",
+      "description": "normalise_protocol_id via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "generate_agent_record_template",
+      "name": "Generate Agent Record Template",
+      "description": "generate_agent_record_template via meok-libp2p-agent-mesh-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}

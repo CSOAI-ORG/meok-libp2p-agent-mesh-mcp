@@ -1,0 +1,28 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "meok-libp2p-agent-mesh-mcp",
+    "description": "MEOK libp2p Agent Mesh MCP \u2014 peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed",
+    "version": "1.0.0",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "meok-libp2p-agent-mesh-mcp"
+      }
+    ],
+    "capabilities": [
+      "mint_peer_id",
+      "generate_peer_keypair",
+      "compose_multiaddr",
+      "parse_multiaddr",
+      "sign_agent_record",
+      "verify_agent_record",
+      "gossipsub_topic",
+      "list_bootstrap_nodes",
+      "normalise_protocol_id",
+      "generate_agent_record_template"
+    ]
+  }
+}
