@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "meok-libp2p-agent-mesh-mcp": {
+      "command": "uvx",
+      "args": [
+        "meok-libp2p-agent-mesh-mcp"
+      ]
+    }
+  }
+}
