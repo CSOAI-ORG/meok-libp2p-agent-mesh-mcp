@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "meok-libp2p-agent-mesh-mcp"
-version = "1.0.0"
+version = "1.0.1"
 description = "MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs."
 readme = "README.md"
 license = { text = "MIT" }

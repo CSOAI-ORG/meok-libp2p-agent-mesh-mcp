@@ -1,0 +1,202 @@
+{
+  "name": "Meok Libp2P Agent Mesh Mcp",
+  "version": "1.0.0",
+  "url": "https://mcp.meok.ai/meok-libp2p-agent-mesh-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "mint_peer_id",
+      "name": "Mint Peer Id",
+      "description": "Mint Peer Id — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "generate_peer_keypair",
+      "name": "Generate Peer Keypair",
+      "description": "Generate Peer Keypair — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "compose_multiaddr",
+      "name": "Compose Multiaddr",
+      "description": "Compose Multiaddr — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "parse_multiaddr",
+      "name": "Parse Multiaddr",
+      "description": "Parse Multiaddr — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "sign_agent_record",
+      "name": "Sign Agent Record",
+      "description": "Sign Agent Record — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "verify_agent_record",
+      "name": "Verify Agent Record",
+      "description": "Verify Agent Record — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "gossipsub_topic",
+      "name": "Gossipsub Topic",
+      "description": "Gossipsub Topic — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "list_bootstrap_nodes",
+      "name": "List Bootstrap Nodes",
+      "description": "List Bootstrap Nodes — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "normalise_protocol_id",
+      "name": "Normalise Protocol Id",
+      "description": "Normalise Protocol Id — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "generate_agent_record_template",
+      "name": "Generate Agent Record Template",
+      "description": "Generate Agent Record Template — a tool of the meok-libp2p-agent-mesh-mcp MCP.",
+      "tags": [
+        "agent",
+        "a2a"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "meok-libp2p-agent-mesh-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}

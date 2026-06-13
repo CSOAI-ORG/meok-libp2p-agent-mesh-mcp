@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: meok-libp2p-agent-mesh-mcp
-Version: 1.0.0
+Version: 1.0.1
 Summary: MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed Agent Records + GossipSub topic derivation. The mesh substrate under A2A / ACP / AP2 / x402. By MEOK AI Labs.
 Author-email: Nicholas Templeman <nicholas@meok.ai>
 License: MIT
