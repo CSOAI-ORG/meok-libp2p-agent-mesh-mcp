@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.CSOAI-ORG/meok-libp2p-agent-mesh-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MEOK libp2p Agent Mesh MCP — peer-to-peer agent discovery + addressing. PeerID + multiaddr + signed",
   "repository": {
     "url": "https://github.com/CSOAI-ORG/meok-libp2p-agent-mesh-mcp",
@@ -11,7 +11,7 @@
     {
       "registryType": "pypi",
       "identifier": "meok-libp2p-agent-mesh-mcp",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtimeHint": "python",
       "transport": {
         "type": "stdio"
